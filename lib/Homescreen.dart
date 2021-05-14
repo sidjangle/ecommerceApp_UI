@@ -1,4 +1,5 @@
 import 'package:ecommerceapp/OfferUI.dart';
+import 'package:ecommerceapp/ProductScreen.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -46,47 +47,55 @@ class _HomeScreenState extends State<HomeScreen> {
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Stack(
-                      children: [
-                        Container(
-                          width: 200,
-                          height: 250,
-                          decoration: BoxDecoration(
-                              color: Color(0xfff1763b),
-                              borderRadius: BorderRadius.circular(20)),
-                          child: Padding(
-                            padding: const EdgeInsets.all(10.0),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'Apple Watch 5',
-                                  style: TextStyle(
-                                      fontSize: 20, color: Colors.white),
-                                ),
-                                SizedBox(
-                                  height: 10,
-                                ),
-                                Text(
-                                  'Rs, 34,000',
-                                  style: TextStyle(
-                                      fontSize: 20, color: Colors.white),
-                                ),
-                              ],
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ProductScreen()));
+                      },
+                      child: Stack(
+                        children: [
+                          Container(
+                            width: 200,
+                            height: 250,
+                            decoration: BoxDecoration(
+                                color: Color(0xfff1763b),
+                                borderRadius: BorderRadius.circular(20)),
+                            child: Padding(
+                              padding: const EdgeInsets.all(10.0),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'Apple Watch 5',
+                                    style: TextStyle(
+                                        fontSize: 20, color: Colors.white),
+                                  ),
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                  Text(
+                                    'Rs, 34,000',
+                                    style: TextStyle(
+                                        fontSize: 20, color: Colors.white),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
-                        ),
-                        Positioned(
-                            top: 70,
-                            left: 40,
-                            child: Container(
-                                width: 200,
-                                height: 200,
-                                child: Image.asset(
-                                  'assets/watch 1.png',
-                                )))
-                      ],
+                          Positioned(
+                              top: 70,
+                              left: 40,
+                              child: Container(
+                                  width: 200,
+                                  height: 200,
+                                  child: Image.asset(
+                                    'assets/watch 1.png',
+                                  )))
+                        ],
+                      ),
                     ),
                   ),
                   Padding(
@@ -140,7 +149,9 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
 
           // Discount Offer
-          SizedBox(height: 30,),
+          SizedBox(
+            height: 30,
+          ),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Row(
@@ -151,25 +162,25 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Row(
-              children: [
-                OfferUIWidget(
-                  color: Color(0xff1dc6ca),
-                  img: 'assets/watch 3.png',
-                ),
-                OfferUIWidget(
-                  color: Color(0xff1ba5c2),
-                  img: 'assets/watch 2.png',
-                ),
-                OfferUIWidget(
-                  color: Color(0xff1dcc9d),
-                  img: 'assets/watch 1.png',
-                )
-              ],
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                children: [
+                  OfferUIWidget(
+                    color: Color(0xff1dc6ca),
+                    img: 'assets/watch 3.png',
+                  ),
+                  OfferUIWidget(
+                    color: Color(0xff1ba5c2),
+                    img: 'assets/watch 2.png',
+                  ),
+                  OfferUIWidget(
+                    color: Color(0xff1dcc9d),
+                    img: 'assets/watch 1.png',
+                  )
+                ],
+              ),
             ),
-                      ),
           )
         ],
       ),
